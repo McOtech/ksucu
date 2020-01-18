@@ -7,6 +7,8 @@
                     <div class="col-md-12">
                         <div class="banner_content">
                             <h6>Who Created us</h6>
+                           <h6>Who Created us</h6>
+
                             <h1>Keep faith always</h1>
                             <p>If you are looking at blank cassettes on the web, you may be very confused at<br> the difference in price. You may see some for as low as $.17 each.</p>
                             <a href="#" class="btn_hover btn_hover_two">Get Started</a>
@@ -16,7 +18,7 @@
             </div>
         </section>
         <!--================banner Area =================-->
-        
+
         <!--================Event Date Area =================-->
         <section class="event_date_area">
             <div class="container">
@@ -53,7 +55,7 @@
             </div>
         </section>
         <!--================Event Date Area =================-->
-        
+
         <!--================About Area =================-->
         <section class="about_area section_gap">
             <div class="container">
@@ -76,7 +78,7 @@
             </div>
         </section>
         <!--================About Area =================-->
-        
+
         <!--================Features Area =================-->
         <section class="features_area">
             <div class="row m0">
@@ -103,7 +105,7 @@
             </div>
         </section>
         <!--================Features Area =================-->
-        
+
         <!--================Sermons work Area =================-->
         <section class="sermons_work_area section_gap">
             <div class="container">
@@ -205,7 +207,7 @@
             </div>
         </section>
         <!--================Donate Area=================-->
-        
+
         <!--================Event Blog Area=================-->
         <section class="event_blog_area section_gap">
             <div class="container">
@@ -255,5 +257,4 @@
         </section>
         <!--================Blog Area=================-->
     @endsection
-        
-        
+
