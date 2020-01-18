@@ -13,7 +13,7 @@
             </div>
         </section>
         <!--================Breadcrumb Area =================-->
-        
+
         <!--================Event Blog Area=================-->
         <section class="event_blog_area section_gap">
             <div class="container">
@@ -69,41 +69,5 @@
                 </div>
             </div>
         </section>
-        <!--================Blog Area=================-->{{--
-        <!--================Event Date Area =================-->
-        <section class="event_date_area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 d_flex">
-                        <div class="evet_location flex">
-                            <h3>Spreading the faith to all</h3>
-                            <p><span class="lnr lnr-calendar-full"></span>5th may, 2018</p>
-                            <p><span class="lnr lnr-clock"></span>Saturday, 09.00 am to 05.00 pm</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 event_time">
-                        <h4>Our Next Event Starts in</h4>
-                        <div id="timer" class="timer">
-                            <div class="timer__section days">
-                                <div class="timer__number"></div>
-                                <div class="timer__label">days</div>
-                            </div>
-                            <div class="timer__section hours">
-                                <div class="timer__number"></div>
-                                <div class="timer__label">hours</div>
-                            </div>
-                            <div class="timer__section minutes">
-                                <div class="timer__number"></div>
-                                <div class="timer__label">Minutes</div>
-                            </div>
-                            <div class="timer__section seconds">
-                                <div class="timer__number"></div>
-                                <div class="timer__label">seconds</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--================Event Date Area =================-->--}}
+        <!--================Blog Area=================-->
 @endsection

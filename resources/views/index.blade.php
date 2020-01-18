@@ -7,7 +7,7 @@
                     <div class="col-md-12">
                         <div class="banner_content">
                             <h6>Who Created us</h6>
-                           <h6>Who Created us</h6>
+                            <h6>Who Created us</h6>
 
                             <h1>Keep faith always</h1>
                             <p>If you are looking at blank cassettes on the web, you may be very confused at<br> the difference in price. You may see some for as low as $.17 each.</p>
