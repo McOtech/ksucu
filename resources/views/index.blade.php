@@ -63,6 +63,8 @@
             <div class="container">
                 <div class="section_title text-center">
                     <h2>Welcome to Faith Church</h2>
+                    <h1>hi</h1>
+
                     <p>The French Revolution constituted for the conscience of the dominant aristocratic class a fall from </p>
                 </div>
                 <div class="row">
