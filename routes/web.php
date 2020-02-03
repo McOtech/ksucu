@@ -11,13 +11,40 @@
 |
 */
 
+// use Illuminate\Routing\Route;
+// use Illuminate\Support\Facades\Auth;
+
 Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/ministries', function(){
-    return view('ministries');
-})->name('ministries.show');
+Route::get('/ministries/{id?}', function($id = 0){
+    return view('ministries.ministries');
+})->name('ministries');
+
+Route::get('/about-{id}', function($id){
+    return view('ministries.about-ministry');
+})->name('ministry.show');
+
+Route::get('event/{id}', function ($id) {
+    return view('ministries.event-details');
+})->name('event.show');
+
+Route::get('gallery/{id}', function ($id) {
+    return view('ministries.gallery');
+})->name('gallery.show');
+
+Route::get('video/{id}', function ($id) {
+    return view('ministries.video');
+})->name('video.show');
+
+Route::get('members/{id}', function ($id) {
+    return view('ministries.members');
+})->name('members.show');
+
+Route::get('policy/{id}', function ($id) {
+    return view('ministries.policy');
+})->name('policy.show');
 
 Auth::routes();
 

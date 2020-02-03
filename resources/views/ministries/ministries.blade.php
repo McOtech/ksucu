@@ -21,9 +21,9 @@
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="event_post">
                             <img src="image/blog1.jpg" alt="">
-                            <a href="#"><h2 class="event_title">Praise And Worship</h2></a>
+                        <a href="{{ route('ministry.show', ['id' => '1']) }}"><h2 class="event_title">Praise And Worship</h2></a>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et doloremagna aliqua. Ut enim ad minim veniam.</p>
-                            <a href="#" class="btn_hover">View Details</a>
+                            <a href="{{ route('ministry.show', ['id' => '1']) }}" class="btn_hover">View Details</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-6">
