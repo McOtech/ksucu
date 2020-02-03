@@ -212,16 +212,18 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="{{asset('template/js/jquery-3.2.1.min.js')}}"></script>
-    <script src="{{asset('template/js/popper.js')}}"></script>
-    <script src="{{asset('template/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('template/vendors/owl-carousel/owl.carousel.min.js')}}"></script>
-    <script src="{{asset('template/js/jquery.ajaxchimp.min.js')}}"></script>
-    <script src="{{asset('template/js/mail-script.js')}}"></script>
-    <script src="{{asset('template/js/stellar.js')}}"></script>
-    <script src="{{asset('template/vendors/lightbox/simpleLightbox.min.js')}}"></script>
-    <script src="{{asset('template/vendors/flipclock/timer.js')}}"></script>
-    <script src="{{asset('template/vendors/nice-select/js/jquery.nice-select.min.js')}}"></script>
-    <script src="{{asset('template/js/custom.js')}}"></script>
+        @section('footer')
+            <script src="{{asset('template/js/jquery-3.2.1.min.js')}}"></script>
+            <script src="{{asset('template/js/popper.js')}}"></script>
+            <script src="{{asset('template/js/bootstrap.min.js')}}"></script>
+            <script src="{{asset('template/vendors/owl-carousel/owl.carousel.min.js')}}"></script>
+            <script src="{{asset('template/js/jquery.ajaxchimp.min.js')}}"></script>
+            <script src="{{asset('template/js/mail-script.js')}}"></script>
+            <script src="{{asset('template/js/stellar.js')}}"></script>
+            <script src="{{asset('template/vendors/lightbox/simpleLightbox.min.js')}}"></script>
+            <script src="{{asset('template/vendors/flipclock/timer.js')}}"></script>
+            <script src="{{asset('template/vendors/nice-select/js/jquery.nice-select.min.js')}}"></script>
+            <script src="{{asset('template/js/custom.js')}}"></script>
+        @show
     </body>
 </html>

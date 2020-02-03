@@ -17,7 +17,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <img class="img-fluid" src="image/event.jpg" alt="">
+                <img class="img-fluid" src="{{asset('image/event.jpg')}}" alt="">
                 </div>
                 <div class="col-md-4 align-self-center">
                     <ul class="list_style sermons_category event_category">

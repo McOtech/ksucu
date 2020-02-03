@@ -25,7 +25,7 @@
                 <div class="item row">
                     <div class="col-lg-8">
                         <div class="sermons_image">
-                            <img src="image/sermns.jpg" alt="">
+                        <img src="{{asset('image/sermns.jpg')}}" alt="">
                             <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women, our behavior on the job is beyond reproach. inappropriate behavior is often laughed.</p>
                         </div>
                     </div>
@@ -44,7 +44,7 @@
                 <div class="item row">
                     <div class="col-lg-8">
                         <div class="sermons_image">
-                            <img src="image/sermns.jpg" alt="">
+                        <img src="{{asset('image/sermns.jpg')}}" alt="">
                             <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women, our behavior on the job is beyond reproach. inappropriate behavior is often laughed.</p>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                 <div class="item row">
                     <div class="col-lg-8">
                         <div class="sermons_image">
-                            <img src="image/sermns.jpg" alt="">
+                        <img src="{{asset('image/sermns.jpg')}}" alt="">
                             <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women, our behavior on the job is beyond reproach. inappropriate behavior is often laughed.</p>
                         </div>
                     </div>
@@ -82,7 +82,7 @@
                 <div class="item row">
                     <div class="col-lg-8">
                         <div class="sermons_image">
-                            <img src="image/sermns.jpg" alt="">
+                        <img src="{{asset('image/sermns.jpg')}}" alt="">
                             <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women, our behavior on the job is beyond reproach. inappropriate behavior is often laughed.</p>
                         </div>
                     </div>
@@ -112,7 +112,7 @@
                     <div class="col-md-3">
                         <div class="team_item">
                             <div class="team_img">
-                                <img src="image/elements/d.jpg" alt="team" class="img-fluid">
+                            <img src="{{asset('image/elements/d.jpg')}}" alt="team" class="img-fluid">
                                 <ul class="list_style">
                                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -139,7 +139,7 @@
                     <div class="col-md-3">
                         <div class="team_item">
                             <div class="team_img">
-                                <img src="image/elements/d.jpg" alt="team" class="img-fluid">
+                            <img src="{{asset('image/elements/d.jpg')}}" alt="team" class="img-fluid">
                                 <ul class="list_style">
                                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -174,7 +174,7 @@
             <div class="col-md-3 features_item">
                 <h3>Our Policy</h3>
                 <p>The French Revolution constituted for the conscience of the dominant aristocratic class a fall from innocence and upturning of the natural.</p>
-                <a href="{{ route('policy.show', ['id' => 1])}}" class="btn_hover view_btn">View Details</a>
+                <a href="{{-- route('policy.show', ['id' => 1])--}}{{asset('image/policy/pw_policy.pdf')}}" class="btn_hover view_btn">View Details</a>
             </div>
             <div class="col-md-3 features_item">
                 <h3>Members</h3>
@@ -205,7 +205,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="event_post">
-                        <img src="image/blog1.jpg" alt="">
+                    <img src="{{asset('image/blog1.jpg')}}" alt="">
                         <a href="#"><h2 class="event_title">Spreading Peace to world</h2></a>
                         <ul class="list_style sermons_category">
                             <li><i class="lnr lnr-user"></i>Saturday, 5th may, 2018</li>
@@ -217,7 +217,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="event_post">
-                        <img src="image/blog2.jpg" alt="">
+                    <img src="{{asset('image/blog2.jpg')}}" alt="">
                         <a href="#"><h2 class="event_title">Spreading Peace to world</h2></a>
                         <ul class="list_style sermons_category">
                             <li><i class="lnr lnr-user"></i>Saturday, 5th may, 2018</li>
@@ -229,7 +229,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="event_post">
-                        <img src="image/blog3.jpg" alt="">
+                    <img src="{{asset('image/blog3.jpg')}}" alt="">
                         <a href="#"><h2 class="event_title">Spreading Light to world</h2></a>
                         <ul class="list_style sermons_category">
                             <li><i class="lnr lnr-user"></i>Saturday, 5th may, 2018</li>
