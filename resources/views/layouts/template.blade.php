@@ -4,18 +4,18 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="icon" href="image/favicon.png" type="image/png">
+    <link rel="icon" href="{{asset('image/favicon.png')}}" type="image/png">
         <title>Faith Church Multi</title>
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="template/css/bootstrap.css">
-        <link rel="stylesheet" href="template/vendors/linericon/style.css">
-        <link rel="stylesheet" href="template/css/font-awesome.min.css">
-        <link rel="stylesheet" href="template/vendors/owl-carousel/owl.carousel.min.css">
-        <link rel="stylesheet" href="template/vendors/lightbox/simpleLightbox.css">
-        <link rel="stylesheet" href="template/vendors/nice-select/css/nice-select.css">
+    <link rel="stylesheet" href="{{asset('template/css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{asset('template/vendors/linericon/style.css')}}">
+    <link rel="stylesheet" href="{{asset('template/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('template/vendors/owl-carousel/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('template/vendors/lightbox/simpleLightbox.css')}}">
+    <link rel="stylesheet" href="{{asset('template/vendors/nice-select/css/nice-select.css')}}">
         <!-- main css -->
-        <link rel="stylesheet" href="template/css/style.css">
-        <link rel="stylesheet" href="template/css/responsive.css">
+    <link rel="stylesheet" href="{{asset('template/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('template/css/responsive.css')}}">
     </head>
     <body>
         <!--================Header Area =================-->
@@ -91,6 +91,43 @@
         <!--================Header Area =================-->
 
             @yield('content')
+
+        <!--================ Event Date Area Start ===============-->
+        <section class="event_date_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 d_flex">
+                        <div class="evet_location flex">
+                            <h3>Spreading the faith to all</h3>
+                            <p><span class="lnr lnr-calendar-full"></span>5th may, 2018</p>
+                            <p><span class="lnr lnr-clock"></span>Saturday, 09.00 am to 05.00 pm</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 event_time">
+                        <h4>Our Next Event Starts in</h4>
+                        <div id="timer" class="timer" style="opacity: 1;">
+                            <div class="timer__section days">
+                                <div class="timer__number">09</div>
+                                <div class="timer__label">days</div>
+                            </div>
+                            <div class="timer__section hours">
+                                <div class="timer__number">23</div>
+                                <div class="timer__label">hours</div>
+                            </div>
+                            <div class="timer__section minutes">
+                                <div class="timer__number">52</div>
+                                <div class="timer__label">Minutes</div>
+                            </div>
+                            <div class="timer__section seconds">
+                                <div class="timer__number">17</div>
+                                <div class="timer__label">seconds</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================ Event Date Area End =================-->
 
         <!--================ start footer Area  =================-->
         <footer class="footer-area section_gap">
@@ -175,17 +212,16 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="template/js/jquery-3.2.1.min.js"></script>
-        <script src="template/js/popper.js"></script>
-        <script src="template/js/bootstrap.min.js"></script>
-        <script src="template/vendors/owl-carousel/owl.carousel.min.js"></script>
-        <script src="template/js/jquery.ajaxchimp.min.js"></script>
-        <script src="template/js/mail-script.js"></script>
-        <script src="template/js/mail-script.js"></script>
-        <script src="template/js/stellar.js"></script>
-        <script src="template/vendors/lightbox/simpleLightbox.min.js"></script>
-        <script src="template/vendors/flipclock/timer.js"></script>
-        <script src="template/vendors/nice-select/js/jquery.nice-select.min.js"></script>
-        <script src="template/js/custom.js"></script>
+    <script src="{{asset('template/js/jquery-3.2.1.min.js')}}"></script>
+    <script src="{{asset('template/js/popper.js')}}"></script>
+    <script src="{{asset('template/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('template/vendors/owl-carousel/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('template/js/jquery.ajaxchimp.min.js')}}"></script>
+    <script src="{{asset('template/js/mail-script.js')}}"></script>
+    <script src="{{asset('template/js/stellar.js')}}"></script>
+    <script src="{{asset('template/vendors/lightbox/simpleLightbox.min.js')}}"></script>
+    <script src="{{asset('template/vendors/flipclock/timer.js')}}"></script>
+    <script src="{{asset('template/vendors/nice-select/js/jquery.nice-select.min.js')}}"></script>
+    <script src="{{asset('template/js/custom.js')}}"></script>
     </body>
 </html>
