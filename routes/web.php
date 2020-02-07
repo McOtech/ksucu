@@ -34,17 +34,21 @@ Route::get('gallery/{id}', function ($id) {
     return view('ministries.gallery');
 })->name('gallery.show');
 
+Route::get('videos/{id}', function ($id) {
+    return view('ministries.videos');
+})->name('video.show');
+
 Route::get('video/{id}', function ($id) {
     return view('ministries.video');
-})->name('video.show');
+})->name('video.view');
 
 Route::get('members/{id}', function ($id) {
     return view('ministries.members');
 })->name('members.show');
 
-Route::get('policy/{id}', function ($id) {
-    return view('ministries.policy');
-})->name('policy.show');
+Route::get('library/{id}', function ($id) {
+    return view('ministries.library');
+})->name('library.show');
 
 Auth::routes();
 

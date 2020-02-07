@@ -182,9 +182,9 @@
             <a href="{{ route('members.show', ['id' => 1])}}" class="btn_hover view_btn">View Details</a>
             </div>
             <div class="col-md-3 features_item">
-                <h3>Our Blog</h3>
+                <h3>Our Library</h3>
                 <p>The French Revolution constituted for the conscience of the dominant aristocratic class a fall from innocence and upturning of the natural.</p>
-                <a href="#" class="btn_hover view_btn">View Details</a>
+                <a href="{{ route('library.show', ['id' => 1])}}" class="btn_hover view_btn">View Details</a>
             </div>
             <div class="col-md-3 features_item">
                 <h3>Our Gallery</h3>

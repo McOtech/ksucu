@@ -21,7 +21,7 @@
                 <h3 class="mb-30 title_color">{Praise And Worship} Policy</h3>
                 <div class="row">
                     <div class="col-12 mt-sm-20 left-align-p">
-                    <iframe src="{{asset('image/policy/pw_policy.pdf')}}" class="w-100" style="height: 300vh;" frameborder="0">
+                        <iframe src="{{asset('image/policy/pw_policy.pdf')}}" class="w-100" style="height: 300vh;" frameborder="0">
                             <div>
                                 <h1>Hello there</h1>
                             </div>
