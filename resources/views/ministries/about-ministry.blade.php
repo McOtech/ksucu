@@ -4,10 +4,11 @@
     <section class="breadcrumb_area br_image">
         <div class="container">
             <div class="page-cover text-center">
-                <h2 class="page-cover-tittle">About Praise And Worship</h2>
+                <h2 class="page-cover-tittle">About {Praise And Worship}</h2>
                 <ol class="breadcrumb">
-                    <li><a href="index.html">Ministry</a></li>
-                    <li class="active">View Details</li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">Ministries</a></li>
+                    <li class="active">About {Praise And Worship}</li>
                 </ol>
             </div>
         </div>

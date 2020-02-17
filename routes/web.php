@@ -52,4 +52,25 @@ Route::get('library/{id}', function ($id) {
 
 Auth::routes();
 
+//Administrator routes
+Route::get('/admin', function (){
+    return view('admin.dashboard');
+})->name('dashboard-admin');
+
+Route::get('/admin/group/dashboard', function (){
+    return view('admin.groupDashboard');
+})->name('groupDashboard-admin');
+
+Route::get('/admin/ministries', function (){
+    return view('admin.ministries');
+})->name('ministry-admin');
+
+Route::get('/admin/committees', function (){
+    return view('admin.committees');
+})->name('committee-admin');
+
+Route::get('/admin/boards', function (){
+    return view('admin.boards');
+})->name('board-admin');
+
 Route::get('/home', 'HomeController@index')->name('home');

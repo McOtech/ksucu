@@ -33,7 +33,7 @@
                         </div>
                         <div class="col-sm-6 col-7">
                             <div class="top_btn d-flex justify-content-end">
-                                <a href="#">My Account</a>
+                            <a href="{{route('ministry-admin')}}">My Account</a>
                                 <a href="#">Donate Now</a>
                             </div>
                         </div>

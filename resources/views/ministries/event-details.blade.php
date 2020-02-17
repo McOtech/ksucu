@@ -4,10 +4,12 @@
     <section class="breadcrumb_area br_image">
         <div class="container">
             <div class="page-cover text-center">
-                <h2 class="page-cover-tittle">Event Details</h2>
+                <h2 class="page-cover-tittle">Past Event Details</h2>
                 <ol class="breadcrumb">
                     <li><a href="index.html">Home</a></li>
-                    <li class="active">Event Details</li>
+                    <li><a href="index.html">Ministries</a></li>
+                    <li class="active">About {Praise And Worship}</li>
+                    <li class="active">{Powernight 2017/2018}</li>
                 </ol>
             </div>
         </div>

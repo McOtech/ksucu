@@ -7,6 +7,8 @@
                 <h2 class="page-cover-tittle">{Praise and Worship} Members</h2>
                 <ol class="breadcrumb">
                     <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">Ministries</a></li>
+                    <li class="active">About {Praise And Worship}</li>
                     <li class="active">Members</li>
                 </ol>
             </div>

@@ -51,7 +51,7 @@
 			        <div class="col-md-3 themeix-half">
 				        <div class="single-video">
 					        							                            <div class="video-img">
-                                <a href="../videos/the-wild-canadian-year-the-nature-of-things/index.html">
+                                <a href="{{route('video.view', ['id' => 1])}}">
 								<img class="lazy" data-src="http://webredox.net/demo/wp/deccal/wp-content/uploads/2018/02/55-263x148.jpg" alt="" />
 								 <noscript>
                                  <img src="{{asset('template/wp-content/uploads/2018/02/55-263x148.jpg')}}" alt="" />
@@ -61,7 +61,7 @@
 
                             </div>
                                                         <div class="video-content">
-                                <h4><a href="../videos/the-wild-canadian-year-the-nature-of-things/index.html" class="video-title">The Wild Canadian Year &#8211; The Nature of Things</a></h4>
+                                <h4><a href="{{route('video.view', ['id' => 1])}}" class="video-title">The Wild Canadian Year &#8211; The Nature of Things</a></h4>
 																	<div class="video-counter">
 																			<div class="video-viewers">
 											<span class="fa fa-eye view-icon"></span>

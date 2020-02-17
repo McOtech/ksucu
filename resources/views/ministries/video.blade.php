@@ -10,7 +10,7 @@
 			    <div class="page-banner">
 					<div class="col-sm-9">
 						<div class="page-title">
-													<h1>Cheesy Stuffed Plantain Tots</h1>
+													<h1>True Worship</h1>
 
 						</div>
 					</div>
