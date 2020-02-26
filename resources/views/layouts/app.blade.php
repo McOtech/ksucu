@@ -227,6 +227,10 @@
                      <a href="{{ route('list') }}">List of Leaders</a>
                       <div class="h5 mb-0 font-weight-bold text-gray-800"> </div>
                     </div>
+                    <div class="col mr-2">
+                     <a href="{{ route('trashed-leader.index') }}">Trashed Leaders</a>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"> </div>
+                    </div>
                     <div class="col-auto">
                       <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
                     </div>
@@ -241,6 +245,17 @@
       <!-- End of Main Content -->
   @endauth
 </body>
+
+                  @if(session()->has('success'))
+                    <div class="alert alert-success">
+                      {{ session()->get('success') }}
+                    </div>
+                  @endif
+                  @if(session()->has('error'))
+                    <div class="alert alert-danger">
+                      {{ session()->get('error') }}
+                    </div>
+                  @endif
             @yield('content')
 
 

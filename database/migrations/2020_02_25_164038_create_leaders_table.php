@@ -21,6 +21,7 @@ class CreateLeadersTable extends Migration
             $table->text('message');
             $table->string('image');
             $table->timestamp('published_at')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

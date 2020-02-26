@@ -45,61 +45,61 @@ class LeaderController extends Controller
     {
 
         // upload the image to storage
-        $image = $request->image->store('leader');
+        $image = $request->image->store('leaders');
         // create the post
-        $post = Leader::create([
+        $leader = Leader::create([
           'name' => $request->name,
           'course' => $request->course,
           'description' => $request->description,
           'image' => $image,
           'message' => $request->message,
         ]);
-
+        session()->flash('success', 'Leader Added successfully.');
         return redirect(route('list'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
+    public function trashed()
+    {
+      $trashed = Leader::onlyTrashed()->get();
+      return view('leaders.list')->with('leader', $trashed);
+    }
+
+
     public function destroy($id)
     {
-        //
-    }
+        // $leader->delete();
+        // return redirect(route('list'));
+
+        $leader = Leader::withTrashed()->where('id', $id)->firstOrFail();
+
+        if ($leader->trashed()) {
+            $leader->deleteImage();
+            $leader->forceDelete();
+        } else {
+            $leader->delete();
+        }
+        session()->flash('success', 'Leader deleted successfully.');
+
+        return redirect(route('list'));
+
+      }
 }

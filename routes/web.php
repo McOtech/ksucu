@@ -24,8 +24,7 @@ Route::resource('leader', 'LeaderController');
 Route::get('list', 'LeaderController@list')->name('list');
 Route::resource('year', 'YearController');
 Route::resource('position', 'PositionController');
-
-
+Route::get('trashed-leader', 'LeaderController@trashed')->name('trashed-leader.index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

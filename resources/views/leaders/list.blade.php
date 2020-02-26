@@ -26,15 +26,26 @@
                 {{ $leader->message }}
               </td>
 
+
+                @if($leader->trashed())
                 <td>
+                  <form action="#" method="POST">
+                    @csrf
+                    @method('PUT')
+                      <button type="submit" class="btn btn-info btn-sm">Restore</button>
+                  </form>
+                </td>
+              @else
+                 <td>
                   <a href="{{ route('leader.edit', $leader->id) }}" class="btn btn-info btn-sm">Edit</a>
                 </td>
+              @endif
               <td>
               <form action="{{ route('leader.destroy', $leader->id) }}" method="POST">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger btn-sm">
-                 DELETE
+                 {{ $leader->trashed() ? 'Delete': 'Trash' }}
                 </button>
               </form>
               </td>

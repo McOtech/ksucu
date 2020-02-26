@@ -13,6 +13,7 @@
                   <h6 class="m-0 font-weight-bold text-primary">Add A Leader</h6>
                 </div>
                 <div class="card-body">
+                 @include('partials.errors')
     <form action="{{ route('leader.store') }}" method="POST"  enctype="multipart/form-data">
     @csrf
 
