@@ -19,6 +19,13 @@ Route::get('/ministries', function(){
     return view('ministries');
 })->name('ministries.show');
 
+
+Route::resource('leader', 'LeaderController');
+Route::get('list', 'LeaderController@list')->name('list');
+Route::resource('year', 'YearController');
+Route::resource('position', 'PositionController');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
