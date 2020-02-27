@@ -38,7 +38,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3">KSUCU</div>
       </a>
 
       <!-- Divider -->
@@ -68,9 +68,10 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Edit Cohorts:</h6>
-          <a class="collapse-item" href="{{route('ministry-admin')}}">Ministries</a>
-            <a class="collapse-item" href="{{route('committee-admin')}}">Committees</a>
-            <a class="collapse-item" href="{{route('board-admin')}}">Boards</a>
+          <a class="collapse-item" href="{{route('ministry.create')}}">Ministries</a>
+            <a class="collapse-item" href="{{route('committee.create')}}">Committees</a>
+            <a class="collapse-item" href="{{route('board.create')}}">Boards</a>
+            <a class="collapse-item" href="{{route('leader.create')}}">Leaders</a>
           </div>
         </div>
       </li>
@@ -301,16 +302,21 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+              <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                  @guest
+                  @else
+                  {{ Auth::user()->username}}
+                @endguest
+            </span>
                 <img class="img-profile rounded-circle" src="{{ asset('template/image/undraw_posting_photo.svg')}}">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="{{ route('home')}}">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
-                <a class="dropdown-item" href="#">
+            <a class="dropdown-item" href="{{ route('profile.edit', ['user' => Auth::user()->id])}}">
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Settings
                 </a>
@@ -319,10 +325,15 @@
                   Activity Log
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                              document.getElementById('logout-form').submit();" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
                 </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
               </div>
             </li>
 

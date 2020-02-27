@@ -99,7 +99,11 @@
 @endsection
 
 @section('groups')
-    <a class="collapse-item" href="{{route('groupDashboard-admin')}}">Praise and Worship</a>
-    <a class="collapse-item" href="utilities-border.html">ICT board</a>
-    <a class="collapse-item" href="utilities-animation.html">Elders Committee</a>
+    @if (Auth::user()->membership != null)
+        @foreach(Auth::user()->membership as $leader)
+            @if($leader->post != 'member' && $leader->right == 'yes')
+                <a class="collapse-item" href="{{route('cohort.show', ['cohort' => $leader->cohort_id])}}">{{$leader->cohort->name}}</a>
+            @endif
+        @endforeach
+    @endif
 @endsection

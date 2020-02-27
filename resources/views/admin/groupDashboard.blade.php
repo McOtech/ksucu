@@ -2,12 +2,12 @@
 @section('content')
 <!-- Page Heading-->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">{Praise and Worship} Dashboard</h1>
+        <h1 class="h3 mb-0 text-gray-800">{{$cohort->name}} Dashboard</h1>
     </div>
     <div class="row">
         <!-- Earnings (Monthly) Card Example -->
         <div class="col-xl-4 col-md-6 mb-4">
-            <a class="text-decoration-none" href="#">
+            <a class="text-decoration-none" href="{{ route('event.edit', ['cohort' => $cohort->id])}}">
                 <div class="card border-left-primary shadow h-100 py-2">
                     <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -21,12 +21,12 @@
                     </div>
                     </div>
                 </div>
-                </div>
             </a>
+        </div>
 
         <!-- Earnings (Monthly) Card Example -->
         <div class="col-xl-4 col-md-6 mb-4">
-            <a href="#" class="text-decoration-none">
+            <a href="{{ route('event.create', ['cohort' => $cohort->id])}}" class="text-decoration-none">
                 <div class="card border-left-success shadow h-100 py-2">
                     <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -45,7 +45,7 @@
 
         <!-- Earnings (Monthly) Card Example -->
         <div class="col-xl-4 col-md-6 mb-4">
-            <a href="#" class="text-decoration-none">
+            <a href="{{ route('group-profile.edit', ['category' => 'Ministry', 'id' => 1])}}" class="text-decoration-none">
                 <div class="card border-left-info shadow h-100 py-2">
                     <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -64,7 +64,7 @@
 
         <!-- Pending Requests Card Example -->
         <div class="col-xl-4 col-md-6 mb-4">
-            <a href="#" class="text-decoration-none">
+        <a href="{{ route('member-dashboard', ['category' => "Ministry", 'id'=> 1])}}" class="text-decoration-none">
                 <div class="card border-left-warning shadow h-100 py-2">
                     <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -198,7 +198,11 @@
 @endsection
 
 @section('groups')
-    <a class="collapse-item" href="{{route('groupDashboard-admin')}}">Praise and Worship</a>
-    <a class="collapse-item" href="utilities-border.html">ICT board</a>
-    <a class="collapse-item" href="utilities-animation.html">Elders Committee</a>
+    @if (Auth::user()->membership != null)
+        @foreach(Auth::user()->membership as $leader)
+            @if($leader->post != 'member' && $leader->right == 'yes')
+                <a class="collapse-item" href="{{route('cohort.show', ['cohort' => $leader->cohort_id])}}">{{$leader->cohort->name}}</a>
+            @endif
+        @endforeach
+    @endif
 @endsection
