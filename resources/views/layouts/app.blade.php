@@ -8,23 +8,26 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <!-- Custom fonts for this template-->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="{{ URL::asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="{{ URL::asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Ksucu') }}</title>
+
+{{--  {{ URL::asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}  --}}
+
 
     <!-- Scripts -->
     <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="{{ URL::asset('vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ URL::asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
   <!-- Core plugin JavaScript-->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
@@ -156,7 +159,7 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+          <div class="d-sm-flex align-items-center justify-content-between mb-2">
             <h1 class="h3 mb-0 text-gray-800">Leadership</h1>
           </div>
 
@@ -184,6 +187,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <a href="{{ route('year.index') }}">Add Year</a>
+                        <a href="{{ route('year.list') }}}">Years</a>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
                           <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"></div>
@@ -208,7 +212,11 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                     <a href="{{ route('position.index') }}">Add Position</a>
+                     <a href="{{ route('position.index') }}">Add Positions</a>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"> </div>
+                    </div>
+                    <div class="col mr-2">
+                     <a href="{{ route('position.list') }}">Positions</a>
                       <div class="h5 mb-0 font-weight-bold text-gray-800"> </div>
                     </div>
                     <div class="col-auto">

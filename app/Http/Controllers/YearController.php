@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Requests\Year\CreateYearRequest;
+use App\Http\Requests\Year\UpdateYearRequest;
+use App\Year;
 use Illuminate\Http\Request;
 
 class YearController extends Controller
@@ -26,15 +28,28 @@ class YearController extends Controller
         //
     }
 
+
+    public function list()
+    {
+        return view('year.list')->with('year', year::all());
+    }
+
+
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateYearRequest $request)
     {
-        //
+        year::create([
+            'year' => $request->year
+          ]);
+
+          session()->flash('success', 'year created successfully.');
+
+          return redirect(route('year.list'));
     }
 
     /**
@@ -54,9 +69,9 @@ class YearController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Year $year)
     {
-        //
+        return view('year.index')->with('year', $year);
     }
 
     /**
@@ -66,9 +81,15 @@ class YearController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateYearRequest $request, Year $year)
     {
-        //
+        $year->update([
+            'year' => $request->year
+          ]);
+
+          session()->flash('success', 'year updated successfully.');
+
+          return redirect(route('year.list'));
     }
 
     /**
@@ -77,8 +98,12 @@ class YearController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Year $year)
     {
-        //
+        $year->delete();
+
+        session()->flash('success', 'year deleted successfully.');
+
+        return redirect(route('year.list'));
     }
 }

@@ -6,6 +6,7 @@
   <div class="card-header">leaders</div>
 
   <div class="card-body">
+  @if($leader->count() > 0)
       <table class="table">
         <thead>
           <th>Image</th>
@@ -29,7 +30,7 @@
 
                 @if($leader->trashed())
                 <td>
-                  <form action="#" method="POST">
+                  <form action="{{ route('restore-leader', $leader->id) }}" method="POST">
                     @csrf
                     @method('PUT')
                       <button type="submit" class="btn btn-info btn-sm">Restore</button>
@@ -53,6 +54,9 @@
           @endforeach
         </tbody>
       </table>
+    @else
+      <h3 class="text-center">No leaders Yet</h3>
+    @endif
 
   </div>
 </div>

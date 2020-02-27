@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Position;
+namespace App\Http\Requests\Year;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreatePosition extends FormRequest
+class CreateYearRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class CreatePosition extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,7 @@ class CreatePosition extends FormRequest
     public function rules()
     {
         return [
-            //
+            'year' => 'required|unique:years'
         ];
     }
 }

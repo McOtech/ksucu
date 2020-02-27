@@ -5,6 +5,7 @@ use App\Leader;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\Leders\CreateLederRequest;
+use App\Http\Requests\Leders\UpdateLederRequest;
 
 class LeaderController extends Controller
 {
@@ -65,15 +66,37 @@ class LeaderController extends Controller
     }
 
 
-    public function edit($id)
+    public function edit(Leader $leader)
     {
-        //
+        return view('leaders.index')->with('leader', $leader);
     }
 
 
-    public function update(Request $request, $id)
+    public function update(UpdateLederRequest $request, Leader $leader)
     {
-        //
+        $data = $request->only(['name', 'description', 'message', 'course']);
+        // check if new image
+        if ($request->hasFile('image')) {
+          // uplload it
+          $image = $request->image->store('leaders');
+          // delete old one
+          $leader->deleteImage();
+
+          $data['image'] = $image;
+        }
+
+        // if ($request->tags) {
+        //   $post->tags()->sync($request->tags);
+        // }
+
+        // update attributes
+        $leader->update($data);
+
+        // flash message
+        session()->flash('success', 'Leader updated successfully.');
+
+        // redirect user
+        return redirect(route('list'));
     }
 
 
@@ -99,7 +122,20 @@ class LeaderController extends Controller
         }
         session()->flash('success', 'Leader deleted successfully.');
 
-        return redirect(route('list'));
+        return redirect()->back();
 
-      }
+    }
+
+      public function restore($id)
+    {
+      $leader = Leader::withTrashed()->where('id', $id)->firstOrFail();
+
+      $leader->restore();
+
+      session()->flash('success', 'Leader restored successfully.');
+
+      return redirect()->back();
+    }
+
+
 }

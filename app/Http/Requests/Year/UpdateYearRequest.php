@@ -4,7 +4,7 @@ namespace App\Http\Requests\Year;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateYear extends FormRequest
+class UpdateYearRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class CreateYear extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,7 @@ class CreateYear extends FormRequest
     public function rules()
     {
         return [
-            //
+            'year' => 'required|unique:years'
         ];
     }
 }

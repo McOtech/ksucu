@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Position\CreatePositionRequest;
+use App\Http\Requests\Position\UpdatePositionRequest;
+use App\Position;
 use Illuminate\Http\Request;
 
 class PositionController extends Controller
@@ -26,15 +29,28 @@ class PositionController extends Controller
         //
     }
 
+
+    public function list()
+    {
+        return view('position.list')->with('position', Position::all());
+    }
+
+
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreatePositionRequest $request)
     {
-        //
+        Position::create([
+            'position' => $request->position
+          ]);
+
+          session()->flash('success', 'Position created successfully.');
+
+          return redirect(route('position.list'));
     }
 
     /**
@@ -54,9 +70,9 @@ class PositionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Position $position)
     {
-        //
+        return view('position.index')->with('position', $position);
     }
 
     /**
@@ -66,9 +82,15 @@ class PositionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdatePositionRequest $request, Position $position)
     {
-        //
+        $position->update([
+            'position' => $request->position
+          ]);
+
+          session()->flash('success', 'Position updated successfully.');
+
+          return redirect(route('position.list'));
     }
 
     /**
@@ -77,8 +99,12 @@ class PositionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Position $position)
     {
-        //
+        $position->delete();
+
+        session()->flash('success', 'Position deleted successfully.');
+
+        return redirect(route('position.list'));
     }
 }
