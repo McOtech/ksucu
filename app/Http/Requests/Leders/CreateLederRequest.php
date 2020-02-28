@@ -29,6 +29,7 @@ class CreateLederRequest extends FormRequest
             'course' => 'required',
             'description' => 'required',
             'message' => 'required',
+            // 'position_id' => 'required',
             'image' => 'required|image'
         ];
     }

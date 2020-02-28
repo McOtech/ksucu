@@ -11,7 +11,7 @@
         <thead>
           <th>Image</th>
           <th>name</th>
-          <th>message</th>
+          <th>Position</th>
           <th></th>
         </thead>
         <tbody>
@@ -24,7 +24,8 @@
                 {{ $leader->name }}
               </td>
               <td>
-                {{ $leader->message }}
+                <a href="{{ route('position.edit', $leader->position->id) }}">
+                {{ $leader->position->position }}
               </td>
 
 

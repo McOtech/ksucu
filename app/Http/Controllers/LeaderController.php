@@ -6,9 +6,16 @@ use App\Leader;
 use Illuminate\Http\Request;
 use App\Http\Requests\Leders\CreateLederRequest;
 use App\Http\Requests\Leders\UpdateLederRequest;
+use App\Position;
+use App\Year;
 
 class LeaderController extends Controller
 {
+    public function __construct()
+    {
+      $this->middleware('VerifyPositionCount')->only(['index', 'store']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,13 +23,13 @@ class LeaderController extends Controller
      */
     public function index()
     {
-        return view('leaders.index');
+        return view('leaders.index')->with('position', Position::all())->with('years', Year::all());
     }
 
 
     public function list()
     {
-        return view('leaders.list')->with('leader', Leader::all());
+        return view('leaders.list')->with('leader', Leader::all())->with('years', Year::all());
     }
 
 
@@ -44,6 +51,7 @@ class LeaderController extends Controller
      */
     public function store(CreateLederRequest $request)
     {
+        // dd($request);
 
         // upload the image to storage
         $image = $request->image->store('leaders');
@@ -53,8 +61,14 @@ class LeaderController extends Controller
           'course' => $request->course,
           'description' => $request->description,
           'image' => $image,
+          'position_id' => $request->position,
           'message' => $request->message,
         ]);
+
+        if ($request->years) {
+            $leader->years()->attach($request->years);
+          }
+
         session()->flash('success', 'Leader Added successfully.');
         return redirect(route('list'));
     }
@@ -68,7 +82,7 @@ class LeaderController extends Controller
 
     public function edit(Leader $leader)
     {
-        return view('leaders.index')->with('leader', $leader);
+        return view('leaders.index')->with('leader', $leader)->with('position', Position::all())->with('years', Year::all());
     }
 
 
@@ -85,9 +99,9 @@ class LeaderController extends Controller
           $data['image'] = $image;
         }
 
-        // if ($request->tags) {
-        //   $post->tags()->sync($request->tags);
-        // }
+        if ($request->years) {
+          $leader->years()->sync($request->years);
+        }
 
         // update attributes
         $leader->update($data);

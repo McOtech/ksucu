@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLeadersTable extends Migration
+class CreateLeaderYearTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,10 @@ class CreateLeadersTable extends Migration
      */
     public function up()
     {
-        Schema::create('leaders', function (Blueprint $table) {
+        Schema::create('leader_year', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->text('course');
-            $table->text('description');
-            $table->text('message');
-            $table->string('image');
-            $table->integer('position_id');
-            $table->timestamp('published_at')->nullable();
+            $table->integer('leader_id');
+            $table->integer('year_id');
             $table->timestamps();
         });
     }
@@ -33,6 +28,6 @@ class CreateLeadersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('leaders');
+        Schema::dropIfExists('leader_year');
     }
 }

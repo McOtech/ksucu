@@ -28,6 +28,7 @@ class UpdateLederRequest extends FormRequest
             'course' => 'required',
             'description' => 'required',
             'message' => 'required',
+            'position' => 'required'
             // 'image' => 'required|image'
         ];
     }

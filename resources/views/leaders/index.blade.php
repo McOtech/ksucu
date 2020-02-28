@@ -31,13 +31,30 @@
         <input type="text" class="form-control" name="course" id='course' value="{{ isset($leader) ? $leader->course: '' }}">
       </div>
       <div class="form-group">
-        <label for="description">Description</label>
+        <label for="position">Position</label>
+        <select name="position" id="position" class="form-control">
+          @foreach($position as $position)
+            <option value="{{ $position->id }}"
+                @if(isset($leader))
+                  @if($position->id === $leader->position_id)
+                    selected
+                  @endif
+                @endif
+              >
+              {{ $position->position }}
+            </option>
+          @endforeach
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="description">Description of Position</label>
         <textarea name="description" id="description" cols="2" rows="2" class="form-control">{{ isset($leader) ? $leader->description: '' }}</textarea>
       </div>
      <div class="form-group">
-        <label for="message">Message</label>
+        <label for="message">Brief Message</label>
         <input type="text" class="form-control" name="message" id='message' value="{{ isset($leader) ? $leader->message: '' }}">
       </div>
+
         @if(isset($leader))
         <div class="form-group">
           <img src="{{ asset($leader->image) }}" alt="" style="width: 15%">
@@ -48,9 +65,32 @@
         <input type="file" class="form-control" name="image" id='image'>
       </div>
 
+
+      @if($years->count() > 0)
+        <div class="form-group">
+          <label for="years">years served</label>
+            <select name="years[]" id="years" class="form-control years-selector" multiple>
+              @foreach($years as $year)
+              <option value="{{ $year->id }}"
+                  @if(isset($leader))
+                    @if($leader->hasYear($year->id))
+                      selected
+                    @endif
+                  @endif
+                >
+                  {{ $year->year }}
+                </option>
+                @endforeach
+            </select>
+          </div>
+        @endif
+
+
+
+
       {{--  <div class="form-group">
-        <label for="category">Category</label>
-        <select name="category" id="category" class="form-control">
+        <label for="position">position</label>
+        <select name="position" id="position" class="form-control">
         </select>
       </div>  --}}
 

@@ -100,6 +100,12 @@ class YearController extends Controller
      */
     public function destroy(Year $year)
     {
+        if ($year->leaders->count() > 0) {
+            session()->flash('error', 'Year cannot be deleted, because it is associated to some leaders.');
+
+            return redirect()->back();
+          }
+
         $year->delete();
 
         session()->flash('success', 'year deleted successfully.');

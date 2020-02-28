@@ -187,10 +187,11 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <a href="{{ route('year.index') }}">Add Year</a>
-                        <a href="{{ route('year.list') }}}">Years</a>
-                      <div class="row no-gutters align-items-center">
+                 <div class="row no-gutters align-items-center">
                         <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"></div>
+                          <div class="h9 mb-0 mr-3 font-weight-bold text-gray-800">
+                          <a href="{{ route('year.list') }}">List of Years</a>
+                          </div>
                         </div>
                         <div class="col">
                           <div class="progress progress-sm mr-2">

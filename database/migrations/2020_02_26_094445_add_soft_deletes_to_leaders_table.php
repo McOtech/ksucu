@@ -26,7 +26,7 @@ class AddSoftDeletesToLeadersTable extends Migration
     public function down()
     {
         Schema::table('leaders', function (Blueprint $table) {
-            $table->dropIfExists('deleted_at');
+            $table->dropColumn('deleted_at');
         });
     }
 }

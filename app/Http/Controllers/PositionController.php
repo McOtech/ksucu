@@ -101,6 +101,12 @@ class PositionController extends Controller
      */
     public function destroy(Position $position)
     {
+        if ($position->leaders-> count() > 0) {
+            session()->flash('error', 'Position cannot be deleted because it has some leaders.');
+
+            return redirect()->back();
+          }
+
         $position->delete();
 
         session()->flash('success', 'Position deleted successfully.');
