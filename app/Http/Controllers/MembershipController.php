@@ -36,17 +36,34 @@ class MembershipController extends Controller
             'post' => $data['post'],
             'right' => "no"
         ]);
-        return redirect()->route('leader.create');
+        if (request('control') != null) {
+            return redirect()->route('profile.edit', ['user' => auth()->user()->id]);
+        }else {
+            return redirect()->route('leader.create');
+        }
     }
 
     public function update(Membership $leader){
-        $data = request()->validate([
-            'right' => ['required', 'string']
-        ]);
-        $leader->update([
-            'right' => $data['right']
-        ]);
-        return redirect()->route('leader.create');
+        if (request('post') != null) {
+            $data = request()->validate([
+                'right' => ['required', 'string'],
+                'post' => ['required', 'string']
+            ]);
+            $leader->update([
+                'right' => $data['right'],
+                'post' => $data['post']
+            ]);
+            return redirect()->route('profile.edit', ['user' => auth()->user()->id]);
+        }else {
+            $data = request()->validate([
+                'right' => ['required', 'string']
+            ]);
+            $leader->update([
+                'right' => $data['right']
+            ]);
+            return redirect()->route('leader.create');
+        }
+
     }
 
     public function delete(Membership $leader){

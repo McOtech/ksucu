@@ -64,7 +64,7 @@
             <div class="card-body">
                 <div class="form-group row">
                     <div class="col-12 mb-sm-0">
-                      <span><strong>Email: </strong>{{$profile->user->email}}</span>
+                      <span><strong>Email: </strong>@if($profile != null){{$profile->user->email}}@endif</span>
                     </div>
                   </div>
                   <div class="form-group row">

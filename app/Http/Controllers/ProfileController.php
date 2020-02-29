@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Cohort;
 use App\Profile;
 use Illuminate\Http\Request;
 use App\User;
 
 class ProfileController extends Controller
 {
-    public function edit($user){
-        $user = User::findOrFail($user);
+    public function edit(User $user){
+        $cohorts = Cohort::all();
         $profile = $user->profile;
-        return view('admin.user-settings', ['profile' => $profile]);
+        return view('admin.user-settings', compact('cohorts'))->with(['profile' => $profile]);
     }
 
     public function storeImage(){
@@ -19,7 +20,7 @@ class ProfileController extends Controller
             'image' => ['required', 'image']
         ]);
         $imagePath = request('image')->store('profilePictures/'.auth()->user()->username, 'public');
-        auth()->user()->profile->create(['image' => $imagePath]);
+        auth()->user()->profile()->create(['image' => $imagePath]);
         return redirect('home');
     }
 
@@ -33,7 +34,7 @@ class ProfileController extends Controller
     }
 
     public function storeDetails(){
-        auth()->user()->profile->create(request()->all());
+        auth()->user()->profile()->create(request()->all());
         return redirect('home');
     }
 
@@ -43,7 +44,7 @@ class ProfileController extends Controller
     }
 
     public function storeContacts(){
-        auth()->user()->profile->create(request()->all());
+        auth()->user()->profile()->create(request()->all());
         return redirect('home');
     }
 

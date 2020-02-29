@@ -38,11 +38,11 @@
                         </tr>
                       </tfoot>
                       <tbody>
-                          @if ($leaders != null)
+                          @if (count($leaders) > 0)
                             @foreach ($leaders as $leader)
                                 <tr id="m1" role="row" class="odd m-category">
                                     <td class="sorting_1">
-                                    <img class="img-profile rounded-circle d-block m-auto" style="height: 50px; width: 50px" src="{{ asset('storage/' . $leader->user->profile->image)}}">
+                                        <img class="img-profile rounded-circle d-block m-auto" style="height: 50px; width: 50px" src="{{ asset('storage/' . $leader->user->profile->image)}}">
                                     </td>
                                     <td>{{$leader->user->profile->fname}} {{$leader->user->profile->lname}} {{$leader->user->profile->sname}}</td>
                                     <td>{{$leader->cohort->name}}</td>

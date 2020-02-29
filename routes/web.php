@@ -63,6 +63,8 @@ Route::get('/admin', function (){
 //displays cohorts index page
 Route::get('/cohort/{cohort}/show', 'CohortController@show')->name('cohort.show');
 
+Route::get('/cohort/{cohort}/info/edit', 'CohortController@showInfo')->name('cohort.edit');
+
 //Creates new ministry
 Route::post('/cohort', 'CohortController@store')->name('cohort.store');
 
@@ -145,6 +147,18 @@ Route::patch('/profile/contacts/{user}', 'ProfileController@updateContacts')->na
 //user image
 Route::post('/profile/image', 'ProfileController@storeImage')->name('image.store');
 Route::patch('/profile/image/{user}', 'ProfileController@updateImage')->name('image.update');
+
+/* -------PHOTOS HANDLER------- */
+
+Route::get('/photo/create', 'PhotoController@create')->name('photo.create');
+Route::post('/photo', 'PhotoController@store')->name('photo.store');
+Route::get('/photo', 'PhotoController@index')->name('photo.index');
+Route::patch('/photo/{photo}/edit', 'PhotoController@update')->name('photo.update');
+Route::delete('/photo/{photo}', 'PhotoController@delete')->name('photo.delete');
+
+Route::get('/photos/{user}', function (){
+    return view('admin.my-photos');
+})->name('photos.show');
 
 Route::get('/user/profile', function (){
     return view('admin.user-profile');

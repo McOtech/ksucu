@@ -2,7 +2,7 @@
 @section('content')
 <!-- Page Heading-->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">{Praise and Worship} Profile</h1>
+        <h1 class="h3 mb-0 text-gray-800">{{$cohort->name}} Profile</h1>
     </div>
     <div class="row">
         <!-- Mission Card Start -->
@@ -27,7 +27,7 @@
               </div>
               <!-- Card Body -->
               <div class="card-body">
-                Dropdown menus can be placed in the card header in order to extend the functionality of a basic card. In this dropdown card example, the Font Awesome vertical ellipsis icon in the card header can be clicked on in order to toggle a dropdown menu.
+                {!!$cohort->about!!}
               </div>
             </div>
 
@@ -45,10 +45,12 @@
                         <div class="container">
                         <div class="row">
                             <div class="col-sm-12">
-                                <form class="user" action="#" method="POST">
+                                <form class="user" action="{{route('cohort.update', ['cohort' => $cohort->id])}}" method="POST">
+                                    @csrf
+                                    @method('PATCH')
                                     <div class="form-group row">
                                         <div id="" class="col-sm-12 sample">
-                                        <textarea  cols="60" class="form-control form-control-user" id="editMissionDescription">About Gallery</textarea>
+                                        <textarea name="about" cols="60" class="form-control form-control-user" id="editMissionDescription">{!! $cohort->about !!}</textarea>
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -102,7 +104,7 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-                    <iframe src="{{ asset('image/policy/pw_policy.pdf')}}" class="w-100" style="height: 25em;" frameborder="0"></iframe>
+                <iframe src="@if($cohort->policy == null) {{ asset('image/policy/pw_policy.pdf')}} @else {{asset('storage/' . $cohort->policy)}} @endif" class="w-100" style="height: 25em;" frameborder="0"></iframe>
                 </div>
               </div>
               <!-- Policy Update Modal-->
@@ -119,10 +121,12 @@
                           <div class="container">
                           <div class="row">
                               <div class="col-sm-12">
-                                  <form class="user" action="#" method="POST">
+                                  <form class="user" action="{{route('cohort.update', ['cohort' => $cohort->id])}}" method="POST">
+                                    @csrf
+                                    @method('PATCH')
                                     <div class="form-group row">
                                         <div class="col-sm-12 mb-sm-0">
-                                          <input type="file" class="form-control form-control-user" id="newPolicyFile">
+                                          <input type="file" name="policy" class="form-control form-control-user" id="newPolicyFile">
                                         </div>
                                       </div>
                                       <div class="form-group row">
@@ -211,7 +215,12 @@
 @endsection
 
 @section('groups')
-    <a class="collapse-item" href="{{route('groupDashboard-admin')}}">Praise and Worship</a>
-    <a class="collapse-item" href="utilities-border.html">ICT board</a>
-    <a class="collapse-item" href="utilities-animation.html">Elders Committee</a>
+    @if (Auth::user()->membership != null)
+        @foreach(Auth::user()->membership as $leader)
+            @if($leader->post != 'member' && $leader->right == 'yes')
+                <a class="collapse-item" href="{{route('cohort.show', ['cohort' => $leader->cohort_id])}}">{{$leader->cohort->name}}</a>
+            @endif
+        @endforeach
+    @endif
 @endsection
+

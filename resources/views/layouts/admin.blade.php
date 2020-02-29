@@ -120,9 +120,9 @@
 
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+      <a class="nav-link" href="{{route('photos.show', ['user' => Auth::user()->id])}}">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span></a>
+          <span>My Photos</span></a>
       </li>
 
       <!-- Nav Item - Tables -->
@@ -308,7 +308,7 @@
                   {{ Auth::user()->username}}
                 @endguest
             </span>
-                <img class="img-profile rounded-circle" src="{{ asset('template/image/undraw_posting_photo.svg')}}">
+          <img class="img-profile rounded-circle" src="@guest {{ asset('template/image/undraw_posting_photo.svg')}} @else {{asset('storage/' . Auth::user()->profile->image)}} @endif">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -407,7 +407,7 @@
     <!-- Nice Editor JS -->
     <script src="{{asset('template/js/nicEdit.js')}}" type="text/javascript"></script>
     @yield('nicEdit')
-
+    @yield('faceapi')
   </body>
 
   </html>
