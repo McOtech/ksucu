@@ -53,7 +53,6 @@
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
                             <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ route('ministries') }}">Minisrtries</a></li>
                             <li class="nav-item"><a class="nav-link" href="sermons.html">Sermons</a></li>
                             <li class="nav-item submenu dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Event</a>
@@ -91,43 +90,6 @@
         <!--================Header Area =================-->
 
             @yield('content')
-
-        <!--================ Event Date Area Start ===============-->
-        <section class="event_date_area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 d_flex">
-                        <div class="evet_location flex">
-                            <h3>Spreading the faith to all</h3>
-                            <p><span class="lnr lnr-calendar-full"></span>5th may, 2018</p>
-                            <p><span class="lnr lnr-clock"></span>Saturday, 09.00 am to 05.00 pm</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 event_time">
-                        <h4>Our Next Event Starts in</h4>
-                        <div id="timer" class="timer" style="opacity: 1;">
-                            <div class="timer__section days">
-                                <div class="timer__number">09</div>
-                                <div class="timer__label">days</div>
-                            </div>
-                            <div class="timer__section hours">
-                                <div class="timer__number">23</div>
-                                <div class="timer__label">hours</div>
-                            </div>
-                            <div class="timer__section minutes">
-                                <div class="timer__number">52</div>
-                                <div class="timer__label">Minutes</div>
-                            </div>
-                            <div class="timer__section seconds">
-                                <div class="timer__number">17</div>
-                                <div class="timer__label">seconds</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--================ Event Date Area End =================-->
 
         <!--================ start footer Area  =================-->
         <footer class="footer-area section_gap">
