@@ -4,18 +4,18 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="icon" href="image/favicon.png" type="image/png">
+    <link rel="icon" href="{{asset('image/favicon.png')}}" type="image/png">
         <title>Faith Church Multi</title>
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="template/css/bootstrap.css">
-        <link rel="stylesheet" href="template/vendors/linericon/style.css">
-        <link rel="stylesheet" href="template/css/font-awesome.min.css">
-        <link rel="stylesheet" href="template/vendors/owl-carousel/owl.carousel.min.css">
-        <link rel="stylesheet" href="template/vendors/lightbox/simpleLightbox.css">
-        <link rel="stylesheet" href="template/vendors/nice-select/css/nice-select.css">
+    <link rel="stylesheet" href="{{asset('template/css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{asset('template/vendors/linericon/style.css')}}">
+    <link rel="stylesheet" href="{{asset('template/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('template/vendors/owl-carousel/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('template/vendors/lightbox/simpleLightbox.css')}}">
+    <link rel="stylesheet" href="{{asset('template/vendors/nice-select/css/nice-select.css')}}">
         <!-- main css -->
-        <link rel="stylesheet" href="template/css/style.css">
-        <link rel="stylesheet" href="template/css/responsive.css">
+    <link rel="stylesheet" href="{{asset('template/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('template/css/responsive.css')}}">
     </head>
     <body>
         <!--================Header Area =================-->
@@ -33,7 +33,7 @@
                         </div>
                         <div class="col-sm-6 col-7">
                             <div class="top_btn d-flex justify-content-end">
-                                <a href="{{route('login')}}">My Account</a>
+                            <a href="{{route('login')}}">My Account</a>
                                 <a href="#">Donate Now</a>
                             </div>
                         </div>
@@ -53,7 +53,6 @@
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
                             <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ route('ministries.show') }}">Minisrtries</a></li>
                             <li class="nav-item"><a class="nav-link" href="sermons.html">Sermons</a></li>
                             <li class="nav-item submenu dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Event</a>
@@ -175,17 +174,18 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="template/js/jquery-3.2.1.min.js"></script>
-        <script src="template/js/popper.js"></script>
-        <script src="template/js/bootstrap.min.js"></script>
-        <script src="template/vendors/owl-carousel/owl.carousel.min.js"></script>
-        <script src="template/js/jquery.ajaxchimp.min.js"></script>
-        <script src="template/js/mail-script.js"></script>
-        <script src="template/js/mail-script.js"></script>
-        <script src="template/js/stellar.js"></script>
-        <script src="template/vendors/lightbox/simpleLightbox.min.js"></script>
-        <script src="template/vendors/flipclock/timer.js"></script>
-        <script src="template/vendors/nice-select/js/jquery.nice-select.min.js"></script>
-        <script src="template/js/custom.js"></script>
+        @section('footer')
+            <script src="{{asset('template/js/jquery-3.2.1.min.js')}}"></script>
+            <script src="{{asset('template/js/popper.js')}}"></script>
+            <script src="{{asset('template/js/bootstrap.min.js')}}"></script>
+            <script src="{{asset('template/vendors/owl-carousel/owl.carousel.min.js')}}"></script>
+            <script src="{{asset('template/js/jquery.ajaxchimp.min.js')}}"></script>
+            <script src="{{asset('template/js/mail-script.js')}}"></script>
+            <script src="{{asset('template/js/stellar.js')}}"></script>
+            <script src="{{asset('template/vendors/lightbox/simpleLightbox.min.js')}}"></script>
+            <script src="{{asset('template/vendors/flipclock/timer.js')}}"></script>
+            <script src="{{asset('template/vendors/nice-select/js/jquery.nice-select.min.js')}}"></script>
+            <script src="{{asset('template/js/custom.js')}}"></script>
+        @show
     </body>
 </html>
